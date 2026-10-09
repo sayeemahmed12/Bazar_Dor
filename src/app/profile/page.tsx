@@ -1,6 +1,10 @@
+'use client'
+import { signOut, useSession } from "@/lib/auth-client";
 import { CornerDownLeft } from "lucide-react";
 
 export default function Profile() {
+
+  const {data:session} = useSession();
   return (
     <div className='bg-[#F3FBF4] min-h-screen'>
       <div className="max-w-3xl m-auto lg:mt-20 md:mt-10 mt-5">
@@ -17,12 +21,12 @@ export default function Profile() {
               </div>
 
               <div className="">
-                <p className='font-semibold'>Rezwan Ahmed</p>
-                <p className='text-gray-600'>rezwanahmed@gmail.com</p>
+                <p className='font-semibold'>{session?.user.name}</p>
+                <p className='text-gray-600'>{session?.user.email}</p>
               </div>
             </div>
 
-            <button className='btn border border-red-600 text-red-600'><CornerDownLeft size={18} /> সাইন আউট</button>
+            <button onClick={() => signOut()} className='btn border border-red-600 text-red-600'><CornerDownLeft size={18} /> সাইন আউট</button>
           </div>
 
           <div className="mt-5 bg-base-200 border border-gray-200 shadow-2xs p-5 rounded-2xl">

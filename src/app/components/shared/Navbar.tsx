@@ -2,7 +2,7 @@ import Image from 'next/image'
 import navLogo from '../../../../public/logo-icon.png'
 import Link from 'next/link'
 import type { CategoryType } from '@/app/type'
-import Profile from './Profile'
+import ProfileOrAuth from './ProfileOrAuth'
 
 const getCategories = async() => {
   try{
@@ -46,9 +46,7 @@ export default async function Navbar() {
           </div>
           
           <div className="flex gap-2 flex-col md:flex-row w-22 sm:w-fit">
-            <Profile />
-            {/* <Link className='btn text-xs sm:text-base' href={'/sign-in'}>সাইন ইন</Link>
-            <Link className='btn text-xs sm:text-base bg-[#05893E] px-3 py-2 text-white rounded-md' href={'/sign-up'}>সাইন আপ</Link> */}
+            <ProfileOrAuth />
           </div>
         </div>
       </div>

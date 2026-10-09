@@ -9,7 +9,7 @@ export default function Hero() {
 
 
   return (
-    <div className="bg-base-100 shadow-sm lg:container lg:m-auto lg:mt-10 m-5 rounded-3xl">
+    <div className="bg-base-100 shadow-sm lg:container lg:m-auto lg:mt-10 rounded-3xl">
       <div className="flex p-10 justify-between items-centers flex-col lg:flex-row-reverse">
 
         <div className="w-full flex justify-center items-end lg:max-w-78">
