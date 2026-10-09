@@ -1,7 +1,7 @@
 'use client'
 
 import ProductCard from "@/app/components/homepage/ProductCard"
-import type{ ProductType } from "@/app/type"
+import{ toBanglaNumber, type ProductType } from "@/app/type"
 import { useState } from "react"
 
 
@@ -23,12 +23,12 @@ export default function CategoryClient({products}:Props) {
 
           <div className="">
             <p className='text-2xl font-bold'>{products[0].categoryNameBn}</p>
-            <p className='text-gray-500'>{products.length}টি পণ্যের আজকের দাম ও পরিবর্তন</p>
+            <p className='text-gray-500'>{toBanglaNumber(products.length)}টি পণ্যের আজকের দাম ও পরিবর্তন</p>
           </div>
         </div>
 
         <div className="flex justify-between items-center mt-10">
-          <p className='text-gray-500'>মোট {products.length}টি পণ্য দেখানো হচ্ছে</p>
+          <p className='text-gray-500'>মোট {toBanglaNumber(products.length)}টি পণ্য দেখানো হচ্ছে</p>
           
           <div className="">
             <span className='text-gray-500'>সাজান</span> 

@@ -42,7 +42,7 @@ export default function ProfileOrAuth() {
           <li className='m-1'>
             <div className="flex">
               <CornerDownLeft className='text-red-600' size={18}/>
-              <p onClick={async() => {const r = await signOut(); console.log(r);}} className='text-red-600 text-lg'>সাইন আউট</p>
+              <p onClick={async() => await signOut()} className='text-red-600 text-lg'>সাইন আউট</p>
             </div>
           </li>
           

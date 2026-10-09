@@ -14,7 +14,6 @@ const getProduct = async(slug:string) =>{
 
   }catch(error){
     console.log(error);
-
   }
 }
 

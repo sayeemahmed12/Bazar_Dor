@@ -1,4 +1,4 @@
-import type { MarketType, ProductType } from "@/app/type";
+import { toBanglaNumber, type MarketType, type ProductType } from "@/app/type";
 
 interface Props {
   product: ProductType;
@@ -43,9 +43,9 @@ export default function TodayPrice({ product }: Props) {
             >
               <p>{market.market}</p>
               <p>{market.division}</p>
-              <p>{market.min} টাকা</p>
-              <p>{market.max} টাকা</p>
-              <p>{(market.min+market.max)/2} টাকা</p>
+              <p>{toBanglaNumber(market.min)} টাকা</p>
+              <p>{toBanglaNumber(market.max)} টাকা</p>
+              <p>{toBanglaNumber((market.min+market.max)/2)} টাকা</p>
             </div>
           ))}
         </div>

@@ -33,3 +33,9 @@ export type ProductType = {
   unit: 'kg' | 'litre' | 'dozen' | 'piece';
   yesterday: number;
 };
+
+export function toBanglaNumber(value: number | string): string {
+  return String(value).replace(/\d/g, (digit) =>
+    "০১২৩৪৫৬৭৮৯"[Number(digit)]
+  );
+}

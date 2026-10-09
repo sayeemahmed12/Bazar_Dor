@@ -1,4 +1,4 @@
-import type{ ProductType } from '@/app/type'
+import{ toBanglaNumber, type ProductType } from '@/app/type'
 import Link from 'next/link'
 
 interface ProductProps{
@@ -28,14 +28,14 @@ export default function ProductCard({product}:ProductProps) {
       <div className="text-lg flex justify-between items-end mt-5">
         <div className="">
           <p className='text-lg'>আজকের দাম</p>
-          <p className=''><span className='font-bold text-xl'>{product?.today}</span> টাকা</p>
+          <p className=''><span className='font-bold text-xl'>{toBanglaNumber(product?.today)}</span> টাকা</p>
         </div>
 
         <div className='bg-base-300 p-2 rounded-2xl'>
           {product.change.dir  === 'up' ? 
-              <p className='text-red-500'>▲ {product.change.pct}%</p>
+              <p className='text-red-500'>▲ {toBanglaNumber(product.change.pct)}%</p>
             :
-              <p className='text-green-500'>▼ {product.change.pct}%</p>
+              <p className='text-green-500'>▼ {toBanglaNumber(product.change.pct)}%</p>
           }
         </div>
       </div>

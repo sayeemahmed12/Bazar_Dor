@@ -13,7 +13,6 @@ const getCategories = async() => {
 
   }catch(error){
     console.log(error);
-
   }
 }
 

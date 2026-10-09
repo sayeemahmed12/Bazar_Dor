@@ -29,8 +29,7 @@ export default function SignUp() {
     });
 
     if (error) {
-      console.log(error);
-      toast.error(error.message || "Failed to create account.");
+      toast.error(error.message);
       return;
     }
 

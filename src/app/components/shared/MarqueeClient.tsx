@@ -2,7 +2,7 @@
 "use client";
 
 import MarqueeText from "react-marquee-text";
-import type { ProductType } from "@/app/type";
+import { toBanglaNumber, type ProductType } from "@/app/type";
 import "react-marquee-text/dist/styles.css";
 import Link from "next/link";
 
@@ -26,7 +26,7 @@ export default function MarqueeClient({
                   <span className="font-semibold">{product.nameBn}</span>
 
                   <span>
-                    {product.today} টাকা
+                    {toBanglaNumber(product.today)} টাকা
                     {product.unit === "kg" ? "/কেজি"
                     : product.unit === "litre" ? "/লিটার"
                     : product.unit === "dozen" ? "/ডজন"
@@ -34,9 +34,9 @@ export default function MarqueeClient({
                   </span>
 
                   {product.change.dir  === 'up' ? 
-                      <p className='text-red-500'>▲ {product.change.pct}%</p>
+                      <p className='text-red-500'>▲ {toBanglaNumber(product.change.pct)}%</p>
                     :
-                      <p className='text-green-500'>▼ {product.change.pct}%</p>
+                      <p className='text-green-500'>▼ {toBanglaNumber(product.change.pct)}%</p>
                   }
 
                   <span className="ml-4 text-white/60">•</span>

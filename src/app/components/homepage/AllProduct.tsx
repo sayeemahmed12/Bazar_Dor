@@ -9,7 +9,6 @@ const getProduct = async() =>{
 
   }catch(error){
     console.log(error);
-
   }
 }
 
