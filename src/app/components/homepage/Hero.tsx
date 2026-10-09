@@ -1,3 +1,4 @@
+'use client'
 import Image from 'next/image'
 import bannerImage from '../../../../public/bazar-hero.png'
 
@@ -9,7 +10,7 @@ export default function Hero() {
 
 
   return (
-    <div className="bg-base-100 shadow-sm lg:container lg:m-auto lg:mt-10 rounded-3xl">
+    <div className="scroll-smooth bg-base-100 shadow-sm lg:container lg:m-auto lg:mt-10 rounded-3xl">
       <div className="flex p-10 justify-between items-centers flex-col lg:flex-row-reverse">
 
         <div className="w-full flex justify-center items-end lg:max-w-78">
@@ -30,7 +31,7 @@ export default function Hero() {
               চাল, ডাল, তেল, সবজি, মাছ, মাংস, ডিম ও মসলার দাম — বাজারভিত্তিক বিস্তারিত, 
               গড়, সর্বনিম্ন-সর্বাধিক এবং দামের পরিবর্তন এক জায়গায়।
             </p>
-            <button className="btn bg-[#05893E] p-6 rounded-xl text-white text-base lg:text-xl">সব পণ্য দেখুন</button>
+            <a href='#allProducts' className="btn bg-[#05893E] p-6 rounded-xl text-white text-base lg:text-xl">সব পণ্য দেখুন</a>
           </div>
         </div>
 

@@ -3,6 +3,8 @@
 import { authClient, signOut } from '@/lib/auth-client'
 import { CornerDownLeft } from 'lucide-react'
 import Link from 'next/link'
+import profilePic from '../../../../public/Profile.png'
+import Image from 'next/image'
 
 export default function ProfileOrAuth() {
   const {data:session} = authClient.useSession();
@@ -18,13 +20,17 @@ export default function ProfileOrAuth() {
       :         
       <div className="dropdown dropdown-end">
         <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
-          <div className="w-10 bg-red-500 rounded-full">
-
-          </div>
+          <Image
+            src={profilePic}
+            alt="profile"
+            width={50}
+            height={50}
+            className='rounded-full'
+          />
         </div>
         <ul
           tabIndex={-1}
-          className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-65 p-2 shadow">
+          className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-fit p-2 shadow">
           <li>
             <p className='font-semibold text-lg'>{session.user.name}</p>
             <p className='text-gray-500 text-base -mt-2'>{session.user.email}</p>

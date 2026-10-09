@@ -3,6 +3,7 @@ import navLogo from '../../../../public/logo-icon.png'
 import Link from 'next/link'
 import type { CategoryType } from '@/app/type'
 import ProfileOrAuth from './ProfileOrAuth'
+import Marquee from './Marquee'
 
 const getCategories = async() => {
   try{
@@ -53,12 +54,13 @@ export default async function Navbar() {
       
       <div className="flex items-center shadow-sm p-3">
         <div className="container mx-auto flex items-center gap-8 overflow-x-auto px-3 py-2 scrollbar-hide">
-          {categories.map((category:CategoryType) =>(
+          {categories?.map((category:CategoryType) =>(
             <Link className='min-w-fit' href={`/category/${category.slug}`} key={category.id}>{category.icon} {category.nameBn}</Link>
           ))}
         </div>
       </div>
-
+      
+      <Marquee />
     </div>
   )
 }
