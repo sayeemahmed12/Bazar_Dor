@@ -4,6 +4,7 @@
 import MarqueeText from "react-marquee-text";
 import type { ProductType } from "@/app/type";
 import "react-marquee-text/dist/styles.css";
+import Link from "next/link";
 
 export default function MarqueeClient({
   products,
@@ -20,7 +21,7 @@ export default function MarqueeClient({
             <div className="flex w-max items-center gap-5">
               {products?.map((product) => (
 
-                <div key={product.id} className="flex shrink-0 items-center gap-2">
+                <Link href={`/details/${product.id}`} key={product.id} className="flex shrink-0 items-center gap-2">
                   <span>{product.image}</span>
                   <span className="font-semibold">{product.nameBn}</span>
 
@@ -39,7 +40,7 @@ export default function MarqueeClient({
                   }
 
                   <span className="ml-4 text-white/60">•</span>
-                </div>
+                </Link>
               ))}
             </div>
 
