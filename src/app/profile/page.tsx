@@ -36,7 +36,7 @@ export default function Profile() {
 
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mt-5 bg-base-200 p-5 shadow-2xs border border-gray-200 rounded-2xl">
             
-            <div className="flex items-center gap-4">
+            <div className="flex flex-col sm:flex-row items-center gap-4">
               <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
                 <Image
                   src={profilePic}
@@ -46,7 +46,7 @@ export default function Profile() {
                   className='rounded-full'
                 />
               </div>
-              <div className="">
+              <div className="text-center sm:text-start">
                 <p className='font-semibold'>{session?.user.name}</p>
                 <p className='text-gray-600'>{session?.user.email}</p>
               </div>
