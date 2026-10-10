@@ -40,12 +40,16 @@ export default function SignUp() {
     await signIn.social({
       provider: "google",
     });
+
+    toast.success("Sign up successfully with Google.")
   }
 
   const signInWithGitHub = async() =>{
     await signIn.social({
       provider: "github",
     });
+
+    toast.success("Sign up successfully with GitHub.")
   }
 
   return (

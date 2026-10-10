@@ -23,18 +23,24 @@ export default function SignIn() {
       toast.error(error.message);
       return;
     }
+
+    toast("Sign in successfully. ")
   };
 
   const signInWithGoogle = async() =>{
     await signIn.social({
       provider: "google",
     });
+
+    toast.success("Sign in successfully with Google.")
   }
 
   const signInWithGitHub = async() =>{
     await signIn.social({
       provider: "github",
     });
+
+    toast.success("Sign in successfully with GitHub.")
   }
 
   return (

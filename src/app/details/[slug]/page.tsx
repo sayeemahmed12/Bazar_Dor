@@ -3,6 +3,7 @@ import React from 'react'
 import PriceSummary from './PriceSummary';
 import TodayPrice from './TodayPrice';
 import DetailsCard from './DetailsCard';
+import { notFound } from 'next/navigation';
 
 interface Props{
  params: Promise<{ slug: string }>;
@@ -11,11 +12,17 @@ interface Props{
 const getProduct = async(slug:string) =>{
   try{
     const res = await fetch(`https://api.api-store.workers.dev/api/bazardor/products/${slug}`);
+
+    if(!res.ok){
+      return null;
+    }
+
     const product = await res.json();
     return product;
 
   }catch(error){
     console.log(error);
+    return null
   }
 }
 
@@ -23,6 +30,10 @@ export default async function ProductDetails({ params }: Props) {
   const {slug} = await params;
 
   const product = await getProduct(slug);
+
+  if(!product){
+    notFound()
+  }
 
   return (
     <div className='bg-[#F3FBF4]'>
