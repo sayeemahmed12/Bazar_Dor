@@ -26,6 +26,11 @@ export default function Profile() {
     toast.success("Name has been change successfully.")
   };
 
+
+  const SignOut = async() => {
+    toast.error("Sign out successfully.")
+    await signOut();
+  }
   return (
     <div className='bg-[#F3FBF4] min-h-screen'>
       <div className="max-w-3xl m-auto lg:mt-20 md:mt-10 mt-5">
@@ -52,7 +57,7 @@ export default function Profile() {
               </div>
             </div>
 
-            <button onClick={() => signOut()} className='btn border border-red-600 text-red-600'><CornerDownLeft size={18} /> সাইন আউট</button>
+            <button onClick={() => SignOut()} className='btn border border-red-600 text-red-600'><CornerDownLeft size={18} /> সাইন আউট</button>
           </div>
 
           <div className="mt-5 bg-base-200 border border-gray-200 shadow-2xs p-5 rounded-2xl">

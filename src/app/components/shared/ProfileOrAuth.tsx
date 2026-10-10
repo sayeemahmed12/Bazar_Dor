@@ -5,14 +5,14 @@ import { CornerDownLeft } from 'lucide-react'
 import Link from 'next/link'
 import profilePic from '../../../../public/Profile.png'
 import Image from 'next/image'
-import { toast } from 'react-toastify'
+import { toast, ToastContainer } from 'react-toastify'
 
 export default function ProfileOrAuth() {
   const {data:session} = authClient.useSession();
 
   const SignOut = async() =>{
-    await signOut();
     toast.error("Sign Out successfully.")
+    await signOut();
   }
 
   return (
@@ -48,14 +48,14 @@ export default function ProfileOrAuth() {
           <li className='m-1'>
             <div className="flex">
               <CornerDownLeft className='text-red-600' size={18}/>
-              <p onClick={() => SignOut()} className='text-red-600 text-lg'>সাইন আউট</p>
+              <button onClick={() => SignOut()} className='text-red-600 text-lg'>সাইন আউট</button>
             </div>
           </li>
           
         </ul>
       </div>
     }
-
+      <ToastContainer />
     </div>
   )
 }
