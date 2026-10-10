@@ -30,6 +30,7 @@ export default function Profile() {
   const SignOut = async() => {
     toast.error("Sign out successfully.")
     await signOut();
+    window.location.reload();
   }
   return (
     <div className='bg-[#F3FBF4] min-h-screen'>
